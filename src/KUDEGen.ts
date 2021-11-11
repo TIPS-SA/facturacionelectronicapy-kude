@@ -20,12 +20,13 @@ class KUDEGen {
                     java8Path = process.env.java8_home;
                 }
                 
-                const classPath = '' + __dirname + '/CreateKude.jar';
+                const classPath = '' + __dirname + '/jasperLibs';
+                const jarFile = '' + __dirname + '/CreateKude.jar';
                 const tmpXMLToSign = '' + __dirname + '/xml_sign_temp.xml';
                 const jasperPath = '' + __dirname + '/DE/';
 
                 fs.writeFileSync(tmpXMLToSign, xml, {encoding: 'utf8'});
-                const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -jar "${classPath}" "${tmpXMLToSign}" "${urlLogo}" "${jasperPath}"`;
+                const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${tmpXMLToSign}" "${urlLogo}" "${jasperPath}"`;
                 //console.log("fullCommand", fullCommand);
                 exec(fullCommand, {encoding: "UTF-8"}, (error: any, stdout: any, stderr: any) => {
                     if (error) {

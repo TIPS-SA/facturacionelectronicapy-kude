@@ -4,7 +4,7 @@
   "description": "Módulo NodeJs/Java para generar el PDF KUDE en base a un archivo XML",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && copyfiles --up 1 src/**/*.jar dist && copyfiles --up 1 src/**/*.jasper dist",
+    "build": "tsc && copyfiles --up 1 src/**/*.jar dist && copyfiles --up 1 src/**/*.jasper dist && copyfiles --up 1 src/**/*.jar dist",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
