@@ -15,15 +15,17 @@ class KUDEGen {
             //xml = await this.asignarFechaFirma(xml);
             findJavaHome({allowJre: true}, (err: any, java8Path: any) => {
                 if(err)return console.log(err);
-                console.log("resultado de java8Path", java8Path);
-                java8Path = `"C:\\Program Files\\Java\\jdk1.8.0_221\\bin\\java"`;
+                if (process.env.java8_home) {
+                    //java8Path = `"C:\\Program Files\\Java\\jdk1.8.0_221\\bin\\java"`;
+                    java8Path = process.env.java8_home;
+                }
                 
-                const classPath = '-jar ' + __dirname + '/CreateKude.jar';
+                const classPath = '' + __dirname + '/CreateKude.jar';
                 const tmpXMLToSign = '' + __dirname + '/xml_sign_temp.xml';
                 const jasperPath = '' + __dirname + '/DE/';
 
                 fs.writeFileSync(tmpXMLToSign, xml, {encoding: 'utf8'});
-                const fullCommand = `${java8Path} -Dfile.encoding=IBM850 ${classPath} ${tmpXMLToSign} ${urlLogo} ${jasperPath}`;
+                const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -jar "${classPath}" "${tmpXMLToSign}" "${urlLogo}" "${jasperPath}"`;
                 //console.log("fullCommand", fullCommand);
                 exec(fullCommand, {encoding: "UTF-8"}, (error: any, stdout: any, stderr: any) => {
                     if (error) {
