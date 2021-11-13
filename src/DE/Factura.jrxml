@@ -510,7 +510,7 @@
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 					<pen lineWidth="1.25"/>
 				</box>
-				<textField evaluationTime="Report" pattern="dd/MM/yyyy">
+				<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
 					<reportElement x="441" y="32" width="95" height="10" printWhenGroupChanges="cUniMed" uuid="314d420e-40fb-43e9-a204-4503ba6ac8fb">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
@@ -519,14 +519,14 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$V{V_dFeIniT}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement x="420" y="21" width="114" height="10" uuid="93380d7e-1e76-4f5e-8ecf-a55fc17f89d4"/>
 					<textElement>
 						<font size="7"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{dNumTim}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement x="380" y="54" width="170" height="10" uuid="5c408e2f-851c-4c62-bdda-6e9890c80aca"/>
 					<textElement>
 						<font size="7"/>
@@ -541,7 +541,7 @@
 					<text><![CDATA[Nº:]]></text>
 				</staticText>
 			</frame>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="101" y="8" width="264" height="12" uuid="5ff031a9-08db-42f7-a4c6-1aad325668d0">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -550,14 +550,14 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dNomEmi}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="101" y="21" width="236" height="10" uuid="8f54601d-8c9c-4af9-8250-2eec3eaf3785"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dDirEmi}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="101" y="43" width="140" height="10" uuid="c235b601-2c84-4e3e-830e-de750b27ccc6">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -566,14 +566,14 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dDesCiuEmi}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="101" y="65" width="154" height="10" uuid="c6168563-0351-4bbe-9364-62a6d47ae019"/>
 				<textElement markup="styled">
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dEmailE}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="101" y="54" width="140" height="10" uuid="bfc53d54-e981-40b2-8fe0-612eb45cb4c4">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -582,14 +582,14 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dTelEmi}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="101" y="32" width="232" height="10" uuid="6be7c697-db5b-4f59-8057-f438e19db105"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dDesDepEmi}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="366" y="43" width="184" height="10" uuid="7e33cad9-f088-4695-9548-b692ac9eed14">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -612,7 +612,7 @@
 				</textElement>
 				<text><![CDATA[Timbrado Nº:]]></text>
 			</staticText>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="389" y="10" width="100" height="10" uuid="b6281520-586f-4230-a4fc-400105f442c8">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -644,13 +644,6 @@
 				<box>
 					<pen lineWidth="1.5"/>
 				</box>
-				<textField>
-					<reportElement x="410" y="10" width="124" height="10" uuid="c629d5b0-45a8-4c89-acdd-33403f8e44fa"/>
-					<textElement>
-						<font size="7"/>
-					</textElement>
-					<textFieldExpression><![CDATA[($F{iNatRec} == 1? ($F{dRucRec}+ "-" + $F{dDVRec}): $F{dNumIDRec})]]></textFieldExpression>
-				</textField>
 				<staticText>
 					<reportElement x="294" y="53" width="63" height="10" uuid="362615ae-5d7c-489e-9da9-1f0941e06921">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
@@ -660,28 +653,28 @@
 					</textElement>
 					<text><![CDATA[Código Cliente:]]></text>
 				</staticText>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement x="357" y="53" width="144" height="10" uuid="0b9a4a78-9114-481a-bf6d-819c62b917db"/>
 					<textElement>
 						<font size="7"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{dCodCliente}]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement x="294" y="10" width="124" height="10" uuid="da82f6ea-3d6e-4717-b1cb-12af3845cd6e"/>
+				<textField isBlankWhenNull="true">
+					<reportElement x="294" y="10" width="224" height="10" uuid="da82f6ea-3d6e-4717-b1cb-12af3845cd6e"/>
 					<textElement>
 						<font size="7" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($F{iNatRec} == 1?  "RUC:" : "Documento de identidad:")]]></textFieldExpression>
+					<textFieldExpression><![CDATA[($F{iNatRec} == 1?  "RUC: " +  $F{dRucRec}+ "-" + $F{dDVRec}  : "Documento de identidad:  "+ $F{dNumIDRec})]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement x="351" y="21" width="146" height="10" uuid="7a1d805e-61c3-40e3-9c7d-2bc0ef952988"/>
 					<textElement>
 						<font size="7"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{dNumIDRec} == "0"  && $F{iNatRec} != 1 )? "Sin Nombre" : $F{dNomRec}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement x="337" y="42" width="144" height="10" uuid="cefc7704-b22a-4107-9f72-b14a2282eddc"/>
 					<textElement>
 						<font size="7"/>
@@ -695,8 +688,8 @@
 					</textElement>
 					<textFieldExpression><![CDATA[($F{iNatRec} == 1?  "Razón Social:" : "Nombre:")]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement x="25" y="31" width="39" height="10" uuid="e3fdd205-bce4-4b99-baf7-34a78c2eb537">
+				<textField isBlankWhenNull="true">
+					<reportElement x="25" y="31" width="54" height="10" uuid="e3fdd205-bce4-4b99-baf7-34a78c2eb537">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -704,8 +697,8 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{dDCondCred} + ":"]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement x="60" y="31" width="137" height="10" uuid="6ad1042a-b718-422f-90e0-4d995f77d49d">
+				<textField isBlankWhenNull="true">
+					<reportElement x="62" y="31" width="137" height="10" uuid="6ad1042a-b718-422f-90e0-4d995f77d49d">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement>
@@ -713,7 +706,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[($F{iCondCred} == "2"  )?$F{dCuotas} :    $F{dPlazoCre}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement x="60" y="42" width="100" height="10" uuid="52e28b00-8089-4ec0-8f79-961f80358912">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
@@ -731,8 +724,17 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{cMoneOpe}!= "PYG" ? ($F{dCondTiCam}==1 ?"Global":"Por ítem" ):""]]></textFieldExpression>
 				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="25" y="64" width="200" height="10" uuid="1e8ff082-83c6-4f0c-9eb2-c5a9f62bc43a">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement>
+						<font size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Tipo Operacion :  "+ $F{dDesTipTra}]]></textFieldExpression>
+				</textField>
 			</frame>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="342" y="41" width="176" height="10" uuid="6120def0-fae4-4d3b-9cfc-4c227f59d00c">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -759,7 +761,7 @@
 				</textElement>
 				<text><![CDATA[Telefono:]]></text>
 			</staticText>
-			<textField evaluationTime="Report" pattern="dd/MM/yyyy h:mm:ss">
+			<textField evaluationTime="Report" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
 				<reportElement x="129" y="19" width="148" height="10" uuid="a5fc9392-1b0a-4c8f-9dc9-0ebcb4285a78">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -796,23 +798,7 @@
 				</textElement>
 				<text><![CDATA[Condicion Venta :]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="25" y="74" width="71" height="10" uuid="257bccad-c2d3-4500-8e15-cd89d968a312"/>
-				<textElement>
-					<font size="7" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Tipo Operacion :]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="92" y="74" width="172" height="10" uuid="29287972-b0a8-4e1f-84da-c020a8e2aceb">
-					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-				</reportElement>
-				<textElement>
-					<font size="7"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{dDesTipTra}]]></textFieldExpression>
-			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement x="97" y="30" width="100" height="10" uuid="06e5f447-bc28-4d65-85f2-ad2b5c23c8f8">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
@@ -917,8 +903,9 @@
 		<band height="15" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="54" y="3" width="169" height="10" uuid="3ab31cde-ac02-419d-b69a-5fbe692f0484">
+				<reportElement x="57" y="3" width="165" height="10" uuid="3ab31cde-ac02-419d-b69a-5fbe692f0484">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Left">
 					<font size="7"/>
@@ -926,8 +913,9 @@
 				<textFieldExpression><![CDATA[$F{dDesProSer}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="224" y="3" width="38" height="10" uuid="2db912b2-480f-44e0-9093-85cbd1e8d844">
+				<reportElement x="226" y="3" width="35" height="10" uuid="2db912b2-480f-44e0-9093-85cbd1e8d844">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9c2ce6b7-591d-4011-879c-834cf98a0e69"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center">
 					<font size="7"/>
@@ -944,8 +932,9 @@
 				<textFieldExpression><![CDATA[$F{dCantProSer}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###;(#,###.###-)">
-				<reportElement x="500" y="3" width="53" height="10" uuid="1d135cd2-685c-45ae-87e0-96863440a66c">
+				<reportElement x="500" y="3" width="50" height="10" uuid="1d135cd2-685c-45ae-87e0-96863440a66c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46b75097-662e-4590-80c2-6367c1fc5b80"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="7"/>
@@ -953,7 +942,7 @@
 				<textFieldExpression><![CDATA[($F{dTasaIVA} == 10) ?$F{dTotBruOpeItem}:0]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="1" y="3" width="49" height="10" uuid="cc64cd71-01a7-448b-b848-9915dc9d0557">
+				<reportElement x="3" y="3" width="47" height="10" uuid="cc64cd71-01a7-448b-b848-9915dc9d0557">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
 				</reportElement>
 				<textElement>
@@ -962,9 +951,10 @@
 				<textFieldExpression><![CDATA[$F{dCodInt}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.###;(#,##0.###-)">
-				<reportElement x="265" y="3" width="53" height="10" uuid="bbd6de7f-dd7c-4e1b-a42d-9746267d938a">
+				<reportElement x="266" y="3" width="50" height="10" uuid="bbd6de7f-dd7c-4e1b-a42d-9746267d938a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97717df6-e2eb-4782-80e0-07b47827c1b0"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="7"/>
@@ -972,9 +962,10 @@
 				<textFieldExpression><![CDATA[$F{dPUniProSer}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="358" y="3" width="50" height="10" uuid="e36ace80-5ee1-41e6-be9f-1c8a71f8b311">
+				<reportElement x="358" y="3" width="48" height="10" uuid="e36ace80-5ee1-41e6-be9f-1c8a71f8b311">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="23e8b3aa-5c0d-40ee-82e9-68329dac4465"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="7"/>
@@ -982,8 +973,9 @@
 				<textFieldExpression><![CDATA[$F{dDescItem}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###;(#,###.###-)">
-				<reportElement x="409" y="3" width="41" height="10" uuid="fed1a6e8-6e1a-4155-8c4b-9b288d8d8e89">
+				<reportElement x="409" y="3" width="39" height="10" uuid="fed1a6e8-6e1a-4155-8c4b-9b288d8d8e89">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46b75097-662e-4590-80c2-6367c1fc5b80"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="7"/>
@@ -991,8 +983,9 @@
 				<textFieldExpression><![CDATA[($F{dTasaIVA} == 0) ?$F{dTotBruOpeItem}:0]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###;(#,###.###-)">
-				<reportElement x="451" y="3" width="47" height="10" uuid="771f2b58-968f-4d8f-bb49-65776584fdbc">
+				<reportElement x="451" y="3" width="45" height="10" uuid="771f2b58-968f-4d8f-bb49-65776584fdbc">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46b75097-662e-4590-80c2-6367c1fc5b80"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Right">
 					<font size="7"/>

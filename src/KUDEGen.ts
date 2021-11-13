@@ -19,7 +19,7 @@ class KUDEGen {
           java8Path = process.env.java8_home;
         }
 
-        const classPath = "" + __dirname + "/jasperLibs";
+        const classPath = "" + __dirname + "/jasperLibs/";
         const jarFile = "" + __dirname + "/CreateKude.jar";
         const tmpXMLToSign = "" + __dirname + "/xml_sign_temp.xml";
         const jasperPath = "" + __dirname + "/DE/";
