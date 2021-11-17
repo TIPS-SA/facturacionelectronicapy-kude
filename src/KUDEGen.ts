@@ -29,7 +29,7 @@ class KUDEGen {
         //console.log("fullCommand", fullCommand);
         exec(
           fullCommand,
-          { encoding: "UTF-8", maxBuffer: 1024 * 500 },
+          { encoding: "UTF-8", maxBuffer: 1024 * 1024 },
           (error: any, stdout: any, stderr: any) => {
             if (error) {
               reject(error);
