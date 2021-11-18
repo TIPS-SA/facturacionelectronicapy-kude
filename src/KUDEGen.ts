@@ -41,7 +41,6 @@ class KUDEGen {
             try {
               //file removed
               fs.unlinkSync(tmpXMLToSign);
-              
             } catch (err) {
               console.error(err);
             }
