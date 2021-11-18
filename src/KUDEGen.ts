@@ -8,7 +8,7 @@ class KUDEGen {
    * @param xml
    * @returns
    */
-  generateKUDE(xml: string, urlLogo: string) {
+  generateKUDE(xml: string, urlLogo: string, ambiente: string) {
     return new Promise(async (resolve, reject) => {
       //console.log("A firmar", xml);
       //xml = await this.asignarFechaFirma(xml);
@@ -25,8 +25,8 @@ class KUDEGen {
         const jasperPath = "" + __dirname + "/DE/";
 
         fs.writeFileSync(tmpXMLToSign, xml, { encoding: "utf8" });
-        const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${tmpXMLToSign}" "${urlLogo}" "${jasperPath}"`;
-        //console.log("fullCommand", fullCommand);
+        const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${tmpXMLToSign}" "${urlLogo}" "${jasperPath}" "${ambiente}"`;
+        console.log("fullCommand", fullCommand);
         exec(
           fullCommand,
           { encoding: "UTF-8", maxBuffer: 1024 * 1024 },
@@ -39,8 +39,9 @@ class KUDEGen {
             }
 
             try {
-              fs.unlinkSync(tmpXMLToSign);
               //file removed
+              fs.unlinkSync(tmpXMLToSign);
+              
             } catch (err) {
               console.error(err);
             }

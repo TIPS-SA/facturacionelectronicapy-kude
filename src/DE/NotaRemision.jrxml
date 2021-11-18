@@ -2,8 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Remision" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e16c87eb-7253-4a85-ab69-7cc7f103ff20">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
-	<parameter name="conectado" class="java.lang.Integer"/>
-	<parameter name="produccion" class="java.lang.Integer"/>
+	<parameter name="ambiente" class="java.lang.String"/>
 	<queryString language="XPath">
 		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
 	</queryString>
@@ -802,7 +801,8 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font size="9" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{conectado} == 1? ($P{produccion} == 0?"Factura generada en Ambiente de TEST de la SET":"") : "Factura generada en Ambiente NO CONECTADO a la SET"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{ambiente}.equals("0") ? ("Factura generada en Ambiente NO CONECTADO a la SET") :
+($P{ambiente}.equals("1") ? "Factura generada en Ambiente de PRUEBA de la SET":"  ")  ]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -1374,7 +1374,7 @@
 					<text><![CDATA[CDC: ]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="148" y="102" width="352" height="15" uuid="bac0618d-5a4b-4a7c-be45-74ad70416df8">
+					<reportElement x="148" y="108" width="352" height="15" uuid="bac0618d-5a4b-4a7c-be45-74ad70416df8">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -1403,16 +1403,6 @@
 						<font size="11"/>
 					</textElement>
 					<text><![CDATA[https://ekuatia.set.gov.py/consultas]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="148" y="86" width="352" height="15" uuid="db31b7ba-07b3-4097-a499-434d73868208">
-						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					</reportElement>
-					<textElement>
-						<font size="9"/>
-					</textElement>
-					<text><![CDATA[ESTE DOCUMENTO ES UNA REPRESENTACIÓN GRÁFICA DE UN DOCUMENTO ELECTRÓNICO (XML)]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="10" y="127" width="544" height="10" uuid="d3ce5e2c-87ff-4bb2-88c3-7a432f2561cd">
@@ -1444,6 +1434,15 @@
 						<font size="11"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{Id} .replaceAll("(?s).{4}(?!$)", "$0 ");]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement stretchType="ContainerBottom" x="148" y="82" width="366" height="12" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="6bd69682-fbde-4420-a6dd-fd2c7d903971">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA["ESTE DOCUMENTO ES UNA REPRESENTACIÓN GRÁFICA DE UN DOCUMENTO ELECTRÓNICO (XML)"]]></textFieldExpression>
 				</textField>
 			</frame>
 			<line>
