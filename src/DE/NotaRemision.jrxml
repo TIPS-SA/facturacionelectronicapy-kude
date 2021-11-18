@@ -2,6 +2,8 @@
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Remision" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e16c87eb-7253-4a85-ab69-7cc7f103ff20">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
+	<parameter name="conectado" class="java.lang.Integer"/>
+	<parameter name="produccion" class="java.lang.Integer"/>
 	<queryString language="XPath">
 		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
 	</queryString>
@@ -571,11 +573,11 @@
 	</field>
 	<field name="dNumDocAso" class="java.lang.String">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gCamDEAsoc/dNumDocAso"/>
-		<fieldDescription><![CDATA[Número del documento ]]></fieldDescription>
+		<fieldDescription><![CDATA[Número del documento]]></fieldDescription>
 	</field>
 	<field name="iTipoDocAso" class="java.lang.String">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gCamDEAsoc/iTipoDocAso"/>
-		<fieldDescription><![CDATA[Tipo de documento impreso ]]></fieldDescription>
+		<fieldDescription><![CDATA[Tipo de documento impreso]]></fieldDescription>
 	</field>
 	<field name="dDTipoDocAso" class="java.lang.String">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gCamDEAsoc/dDTipoDocAso"/>
@@ -793,6 +795,15 @@
 					<textFieldExpression><![CDATA[$F{dDesActEco}]]></textFieldExpression>
 				</textField>
 			</frame>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="0" y="-21" width="555" height="21" forecolor="#FF130F" uuid="28b70c6c-32aa-4d89-ba56-6a253ea0cb2e">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{conectado} == 1? ($P{produccion} == 0?"Factura generada en Ambiente de TEST de la SET":"") : "Factura generada en Ambiente NO CONECTADO a la SET"]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
@@ -1417,12 +1428,12 @@
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 					</reportElement>
-					<imageExpression><![CDATA[null/*com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+					<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
     new com.google.zxing.qrcode.QRCodeWriter().encode(
         $F{dCarQR},
         com.google.zxing.BarcodeFormat.QR_CODE, 300, 300
     )
-)*/]]></imageExpression>
+)]]></imageExpression>
 				</image>
 				<textField>
 					<reportElement x="179" y="60" width="295" height="20" uuid="1c41c542-080f-4900-8cff-c25d3c828245">

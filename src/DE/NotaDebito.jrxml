@@ -2,6 +2,8 @@
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NotaDeDebito" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ef5a6b1-b7e0-4139-8c18-7c72bbfd7642">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
+	<parameter name="conectado" class="java.lang.Integer"/>
+	<parameter name="produccion" class="java.lang.Integer"/>
 	<queryString language="xPath">
 		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
 	</queryString>
@@ -701,6 +703,15 @@
 					<textFieldExpression><![CDATA[$F{dDesActEco}]]></textFieldExpression>
 				</textField>
 			</frame>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="0" y="-10" width="555" height="12" forecolor="#FF130F" uuid="ce1706d3-b5c4-4788-b14b-248e296ccb8d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{conectado} == 1? ($P{produccion} == 0?"Factura generada en Ambiente de TEST de la SET":"") : "Factura generada en Ambiente NO CONECTADO a la SET"]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>

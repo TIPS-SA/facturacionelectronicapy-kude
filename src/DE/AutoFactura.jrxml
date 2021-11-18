@@ -4,6 +4,8 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="450"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="536"/>
+	<parameter name="conectado" class="java.lang.Integer"/>
+	<parameter name="produccion" class="java.lang.Integer"/>
 	<queryString language="xPath">
 		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
 	</queryString>
@@ -676,6 +678,15 @@
 					<textFieldExpression><![CDATA[$F{dEst}+ "-" +   $F{dPunExp} + "-" +$F{dNumDoc}]]></textFieldExpression>
 				</textField>
 			</frame>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement x="0" y="-21" width="555" height="21" forecolor="#FF130F" uuid="4da909ca-ad59-4195-ab1d-e044b3a60120">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{conectado} == 1? ($P{produccion} == 0?"Factura generada en Ambiente de TEST de la SET":"") : "Factura generada en Ambiente NO CONECTADO a la SET"]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
@@ -1085,6 +1096,12 @@
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 					</reportElement>
+					<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+    new com.google.zxing.qrcode.QRCodeWriter().encode(
+        $F{dCarQR},
+        com.google.zxing.BarcodeFormat.QR_CODE, 300, 300
+    )
+)]]></imageExpression>
 				</image>
 				<textField>
 					<reportElement x="187" y="51" width="295" height="17" uuid="50aa38a6-65dc-4df7-88f6-0149db0ec0ec">

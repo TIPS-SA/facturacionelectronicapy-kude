@@ -11,7 +11,9 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
+	<parameter name="conectado" class="java.lang.Integer"/>
 	<parameter name="LOGO_URL" class="java.lang.String" isForPrompting="false" evaluationTime="Early"/>
+	<parameter name="produccion" class="java.lang.Integer"/>
 	<queryString language="xPath">
 		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
 	</queryString>
@@ -540,6 +542,15 @@
 					</textElement>
 					<text><![CDATA[Nº:]]></text>
 				</staticText>
+				<textField evaluationTime="Report" isBlankWhenNull="true">
+					<reportElement x="0" y="-20" width="555" height="21" forecolor="#FF130F" uuid="336b0575-896f-43e5-93d7-1421d01fc8bf">
+						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{conectado} == 1? ($P{produccion} == 0?"Factura generada en Ambiente de TEST de la SET":"") : "Factura generada en Ambiente NO CONECTADO a la SET"]]></textFieldExpression>
+				</textField>
 			</frame>
 			<textField isBlankWhenNull="true">
 				<reportElement x="101" y="8" width="264" height="12" uuid="5ff031a9-08db-42f7-a4c6-1aad325668d0">
@@ -668,7 +679,7 @@
 					<textFieldExpression><![CDATA[($F{iNatRec} == 1?  "RUC: " +  $F{dRucRec}+ "-" + $F{dDVRec}  : "Documento de identidad:  "+ $F{dNumIDRec})]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="351" y="21" width="146" height="10" uuid="7a1d805e-61c3-40e3-9c7d-2bc0ef952988"/>
+					<reportElement x="349" y="21" width="146" height="10" uuid="7a1d805e-61c3-40e3-9c7d-2bc0ef952988"/>
 					<textElement>
 						<font size="7"/>
 					</textElement>
@@ -682,7 +693,7 @@
 					<textFieldExpression><![CDATA[$F{dTelRec}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="295" y="21" width="61" height="10" uuid="c188d8e9-cc07-4026-aa55-17392ac08084"/>
+					<reportElement x="295" y="21" width="56" height="10" uuid="c188d8e9-cc07-4026-aa55-17392ac08084"/>
 					<textElement>
 						<font size="7" isBold="true"/>
 					</textElement>
@@ -695,7 +706,7 @@
 					<textElement>
 						<font size="7" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{dDCondCred} + ":"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{dDCondCred} == null ? "Cuota: ": ($F{dDCondCred} + ":")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="62" y="31" width="137" height="10" uuid="6ad1042a-b718-422f-90e0-4d995f77d49d">
@@ -853,13 +864,13 @@
 				<text><![CDATA[Cantidad]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="265" y="-22" width="53" height="20" uuid="6559228b-0471-4346-b9f4-1be01f0b64a5">
+				<reportElement x="269" y="-22" width="45" height="20" uuid="6559228b-0471-4346-b9f4-1be01f0b64a5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1392975-1ed6-4fdf-83a0-7976d4384b71"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="7" isBold="false"/>
 				</textElement>
-				<text><![CDATA[Precio    Unitario]]></text>
+				<text><![CDATA[Precio Unitario]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="359" y="-22" width="50" height="20" uuid="dc35ea2b-ba7e-4f29-8936-6d31a8d76bb1">
@@ -1021,14 +1032,14 @@
 					<textElement>
 						<font size="7"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{dTotIVA}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{dTotIVA} == null? 0:$F{dTotIVA}]]></textFieldExpression>
 				</textField>
-				<textField pattern="#,##0.###;(#,##0.###-)">
+				<textField pattern="#,###.00">
 					<reportElement x="308" y="40" width="82" height="10" uuid="d827f690-3b21-4426-95cc-d0424d449e1e"/>
 					<textElement>
 						<font size="7"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{dIVA10}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{dIVA10} == null? 0: new DecimalFormat("###.#").format($F{dIVA10} )]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -1108,12 +1119,12 @@
 				</textElement>
 				<text><![CDATA[https://ekuatia.set.gov.py/consultas]]></text>
 			</staticText>
-			<textField pattern="#,##0.###;(#,##0.###-)">
+			<textField evaluationTime="Report" pattern="#,###">
 				<reportElement x="192" y="40" width="86" height="10" uuid="db2d8853-1da9-4277-a45c-bc86accbd7d8"/>
 				<textElement>
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{dIVA5}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{dIVA5} == null? 0:$F{dIVA5}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="3" y="40" width="106" height="10" uuid="f4fac15b-5ea3-43b1-a76a-24c2ecdf566f">
@@ -1193,7 +1204,7 @@
 				<text><![CDATA[TOTAL EN GUARANIES]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="3" y="199" width="555" height="14" uuid="fded8888-2fd5-43ab-ba29-1da5e463104f"/>
+				<reportElement x="0" y="199" width="555" height="14" uuid="fded8888-2fd5-43ab-ba29-1da5e463104f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
