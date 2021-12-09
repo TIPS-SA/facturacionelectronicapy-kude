@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NotaDeDebito" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ef5a6b1-b7e0-4139-8c18-7c72bbfd7642">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
 	<parameter name="ambiente" class="java.lang.String">
@@ -699,24 +699,6 @@
 						<font size="7"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{dDesActEco}]]></textFieldExpression>
-				</textField>
-				<textField evaluationTime="Report" isBlankWhenNull="true">
-					<reportElement x="35" y="53" width="200" height="50" forecolor="#FF130F" uuid="8c36ef35-26f0-46db-b8f2-99da9574bfe9">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-						<font size="9" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{ambiente}]]></textFieldExpression>
-				</textField>
-				<textField evaluationTime="Report" isBlankWhenNull="true">
-					<reportElement x="177" y="16" width="200" height="50" printWhenGroupChanges="dCodInt" forecolor="#FF130F" uuid="29f0a035-b725-420d-9ae4-c18fa77fb27b">
-						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
-					</reportElement>
-					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-						<font size="9" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA["PUTO"]]></textFieldExpression>
 				</textField>
 			</frame>
 			<textField evaluationTime="Report" isBlankWhenNull="true">
