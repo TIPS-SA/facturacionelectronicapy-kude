@@ -3,6 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Remision" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e16c87eb-7253-4a85-ab69-7cc7f103ff20">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
 	<parameter name="ambiente" class="java.lang.String"/>
+	<parameter name="LOGO_URL" class="java.lang.String" isForPrompting="false" evaluationTime="Early"/>
 	<queryString language="XPath">
 		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
 	</queryString>
@@ -655,6 +656,7 @@
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 					</reportElement>
+					<imageExpression><![CDATA[$P{LOGO_URL}]]></imageExpression>
 				</image>
 				<staticText>
 					<reportElement x="379" y="10" width="36" height="10" uuid="b5528fba-d446-421e-b45e-979cf74a2472"/>
@@ -802,7 +804,7 @@
 					<font size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{ambiente}.equals("0") ? ("Factura generada en Ambiente NO CONECTADO a la SET") :
-($P{ambiente}.equals("1") ? "Factura generada en Ambiente de PRUEBA de la SET":"  ")  ]]></textFieldExpression>
+($P{ambiente}.equals("1") ? "Factura generada en Ambiente de PRUEBA de la SET":"  ")]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -881,7 +883,7 @@
 				<textElement verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{dNumIDRec} == "0"  && $F{iNatRec} != 1 )? "Sin Nombre" : $F{dNomRec}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{dNomRec}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="16" y="122" width="86" height="10" uuid="1712b89b-ad6e-4976-a227-348758c50f4c"/>

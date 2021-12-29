@@ -5,6 +5,7 @@
 	<parameter name="ambiente" class="java.lang.String">
 		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="LOGO_URL" class="java.lang.String" isForPrompting="false" evaluationTime="Early"/>
 	<queryString language="xPath">
 		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
 	</queryString>
@@ -19,6 +20,9 @@
 	<field name="dNCM" class="java.lang.Integer">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="dNCM"/>
 		<fieldDescription><![CDATA[dNCM]]></fieldDescription>
+	</field>
+	<field name="dTotOpeItem" class="java.lang.Double">
+		<fieldDescription><![CDATA[gValorItem/gValorRestaItem/dTotOpeItem]]></fieldDescription>
 	</field>
 	<field name="dDesProSer" class="java.lang.String">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="dDesProSer"/>
@@ -562,6 +566,7 @@
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 					</reportElement>
+					<imageExpression><![CDATA[$P{LOGO_URL}]]></imageExpression>
 				</image>
 				<staticText>
 					<reportElement x="379" y="10" width="36" height="10" uuid="65b52b50-983b-455a-84c3-2afb72ee167a"/>
@@ -800,7 +805,7 @@
 					<textElement verticalAlignment="Middle">
 						<font size="7"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($F{dNumIDRec} == "0"  && $F{iNatRec} != 1 )? "Sin Nombre" : $F{dNomRec}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{dNomRec}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="361" y="40" width="176" height="10" uuid="4e0054da-15a5-4bde-88d8-3a09f0c7be65">
@@ -1041,7 +1046,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dCantProSer}]]></textFieldExpression>
 			</textField>
-			<textField pattern="#,###.###;(#,###.###-)">
+			<textField pattern="#,##0.###;(#,##0.###-)">
 				<reportElement x="502" y="0" width="50" height="18" uuid="d0170991-c62b-4bff-ae0d-23059e07db6a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46b75097-662e-4590-80c2-6367c1fc5b80"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -1049,18 +1054,18 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{dTasaIVA} == 10) ?$F{dTotBruOpeItem}:0]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dTasaIVA} == 10) ?$F{dTotOpeItem}:0]]></textFieldExpression>
 			</textField>
-			<textField pattern="#,###.###;(#,###.###-)">
+			<textField pattern="#,##0.###;(#,##0.###-)">
 				<reportElement x="445" y="0" width="50" height="18" uuid="27edfc34-a8ca-4456-93b4-0075bd3fd7fa">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46b75097-662e-4590-80c2-6367c1fc5b80"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{dTasaIVA} == 5) ?$F{dTotBruOpeItem}:0]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dTasaIVA} == 5) ?$F{dTotOpeItem}:0]]></textFieldExpression>
 			</textField>
-			<textField pattern="#,###.###;(#,###.###-)">
+			<textField pattern="#,##0.###;(#,##0.###-)">
 				<reportElement x="387" y="0" width="50" height="18" uuid="b9b3fc7c-221e-4bda-8c82-95386357ef10">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46b75097-662e-4590-80c2-6367c1fc5b80"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -1068,7 +1073,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{dTasaIVA} == 0) ?$F{dTotBruOpeItem}:0]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dTasaIVA} == 0) ?$F{dTotOpeItem}:0]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###;(#,###.###-)">
 				<reportElement x="331" y="0" width="50" height="18" uuid="63af6411-b7bf-47f1-9002-72e608fbbb11">

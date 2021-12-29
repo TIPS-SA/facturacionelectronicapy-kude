@@ -3,6 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NotaDeDebito" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ef5a6b1-b7e0-4139-8c18-7c72bbfd7642">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
 	<parameter name="ambiente" class="java.lang.String"/>
+	<parameter name="LOGO_URL" class="java.lang.String" isForPrompting="false" evaluationTime="Early"/>
 	<queryString language="xPath">
 		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
 	</queryString>
@@ -197,6 +198,9 @@
 	<field name="dTotBruOpeItem" class="java.lang.Double">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="gValorItem/dTotBruOpeItem"/>
 		<fieldDescription><![CDATA[gValorItem/dTotBruOpeItem]]></fieldDescription>
+	</field>
+	<field name="dTotOpeItem" class="java.lang.Double">
+		<fieldDescription><![CDATA[gValorItem/dTotOpeItem]]></fieldDescription>
 	</field>
 	<field name="dTasaIVA" class="java.lang.Integer">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="gCamIVA/dTasaIVA"/>
@@ -563,6 +567,7 @@
 						<property name="com.jaspersoft.studio.unit.width" value="mm"/>
 						<property name="com.jaspersoft.studio.unit.height" value="mm"/>
 					</reportElement>
+					<imageExpression><![CDATA[$P{LOGO_URL}]]></imageExpression>
 				</image>
 				<staticText>
 					<reportElement x="381" y="10" width="36" height="10" uuid="65b52b50-983b-455a-84c3-2afb72ee167a"/>
@@ -710,7 +715,7 @@
 					<font size="7" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{ambiente}.equals("0") ? ("Factura generada en Ambiente NO CONECTADO a la SET") :
-($P{ambiente}.equals("1") ? "Factura generada en Ambiente de PRUEBA de la SET":"  ")  ]]></textFieldExpression>
+($P{ambiente}.equals("1") ? "Factura generada en Ambiente de PRUEBA de la SET":"  ")]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>
@@ -801,7 +806,7 @@
 					<textElement verticalAlignment="Middle">
 						<font size="7"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($F{dNumIDRec} == "0"  && $F{iNatRec} != 1 )? "Sin Nombre" : $F{dNomRec}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{dNomRec}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="353" y="40" width="176" height="10" uuid="4e0054da-15a5-4bde-88d8-3a09f0c7be65">
@@ -1050,7 +1055,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{dTasaIVA} == 10) ?$F{dTotBruOpeItem}:0]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dTasaIVA} == 10) ?$F{dTotOpeItem}:0]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###;(#,###.###-)">
 				<reportElement x="445" y="0" width="50" height="18" uuid="27edfc34-a8ca-4456-93b4-0075bd3fd7fa">
@@ -1059,7 +1064,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{dTasaIVA} == 5) ?$F{dTotBruOpeItem}:0]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dTasaIVA} == 5) ?$F{dTotOpeItem}:0]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###;(#,###.###-)">
 				<reportElement x="387" y="0" width="50" height="18" uuid="b9b3fc7c-221e-4bda-8c82-95386357ef10">
@@ -1069,7 +1074,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[($F{dTasaIVA} == 0) ?$F{dTotBruOpeItem}:0]]></textFieldExpression>
+				<textFieldExpression><![CDATA[($F{dTasaIVA} == 0) ?$F{dTotOpeItem}:0]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###;(#,###.###-)">
 				<reportElement x="331" y="0" width="50" height="18" uuid="63af6411-b7bf-47f1-9002-72e608fbbb11">
