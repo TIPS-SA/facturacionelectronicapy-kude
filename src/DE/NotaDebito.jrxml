@@ -200,7 +200,7 @@
 		<fieldDescription><![CDATA[gValorItem/dTotBruOpeItem]]></fieldDescription>
 	</field>
 	<field name="dTotOpeItem" class="java.lang.Double">
-		<fieldDescription><![CDATA[gValorItem/dTotOpeItem]]></fieldDescription>
+		<fieldDescription><![CDATA[gValorItem/gValorRestaItem/dTotOpeItem]]></fieldDescription>
 	</field>
 	<field name="dTasaIVA" class="java.lang.Integer">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="gCamIVA/dTasaIVA"/>
