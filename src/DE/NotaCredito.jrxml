@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NotaDeDebito" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ef5a6b1-b7e0-4139-8c18-7c72bbfd7642">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/NotaDebito.xml"/>
 	<parameter name="ambiente" class="java.lang.String">
 		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
 	</parameter>
@@ -747,13 +747,6 @@
 					<text><![CDATA[Tipo de cambio global o por item]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="93" y="52" width="82" height="10" uuid="69601e5a-c9d3-42a3-a219-4cb1d039ea7d"/>
-					<textElement verticalAlignment="Middle">
-						<font size="7" isBold="true"/>
-					</textElement>
-					<text><![CDATA[Tipo de cambio:]]></text>
-				</staticText>
-				<staticText>
 					<reportElement x="8" y="52" width="42" height="10" uuid="fe33db27-a0ef-423a-82b1-12da47bf8129"/>
 					<textElement verticalAlignment="Middle">
 						<font size="7" isBold="true"/>
@@ -904,7 +897,7 @@
 					<textFieldExpression><![CDATA[$F{dDesTipDocAso}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Report" isBlankWhenNull="true">
-					<reportElement x="159" y="52" width="118" height="10" uuid="42e092b2-8e1f-491d-93b2-d5e377b6381e">
+					<reportElement x="164" y="52" width="118" height="10" uuid="42e092b2-8e1f-491d-93b2-d5e377b6381e">
 						<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
@@ -926,6 +919,13 @@
 					</textElement>
 					<text><![CDATA[Cuota:]]></text>
 				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="100" y="52" width="66" height="10" uuid="a5ffc952-507e-45fb-9c54-046389bad063"/>
+					<textElement verticalAlignment="Middle">
+						<font size="7" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cMoneOpe}!= "PYG" ? " ":"Tipo de cambio: "]]></textFieldExpression>
+				</textField>
 			</frame>
 			<rectangle>
 				<reportElement x="0" y="126" width="555" height="22" backcolor="#CFCFCF" uuid="ad9d02b1-3a12-437a-83f3-8320cac97638"/>
@@ -1261,7 +1261,7 @@
 				<textElement>
 					<font size="7"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{dTotIVA}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{dIVA10}  +$F{dIVA5}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###;(#,###.###-)">
 				<reportElement x="423" y="17" width="129" height="10" uuid="f8103060-c2ec-4e54-9f2c-3506daba54c9"/>

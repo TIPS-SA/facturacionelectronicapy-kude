@@ -58,7 +58,7 @@
 		<fieldDescription><![CDATA[gValorItem/dTotBruOpeItem]]></fieldDescription>
 	</field>
 	<field name="dTotOpeItem" class="java.lang.Double">
-		<fieldDescription><![CDATA[gValorItem/dTotOpeItem]]></fieldDescription>
+		<fieldDescription><![CDATA[gValorItem/gValorRestaItem/dTotOpeItem ]]></fieldDescription>
 	</field>
 	<field name="gValorRestaItem" class="java.lang.String">
 		<property name="net.sf.jasperreports.xpath.field.expression" value="gValorItem/gValorRestaItem"/>
@@ -824,7 +824,7 @@
 					<textFieldExpression><![CDATA[$F{dNumCons}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,###.###;(#,###.###-)" isBlankWhenNull="true">
-					<reportElement x="383" y="22" width="95" height="10" uuid="5e5629f3-7a39-46a5-9458-b9c639d6eae9">
+					<reportElement x="382" y="22" width="169" height="10" uuid="5e5629f3-7a39-46a5-9458-b9c639d6eae9">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -834,7 +834,7 @@
 					<textFieldExpression><![CDATA[$F{dDesTipCons}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Report" pattern="dd/MM/yyyy hh:mm:ss" isBlankWhenNull="true">
-					<reportElement x="111" y="9" width="95" height="10" uuid="adac92e2-3a56-4ea7-844b-f861af9938c4">
+					<reportElement x="110" y="9" width="95" height="10" uuid="adac92e2-3a56-4ea7-844b-f861af9938c4">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -894,7 +894,7 @@
 					<textFieldExpression><![CDATA[$F{dNumCasVen}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,###.###;(#,###.###-)" isBlankWhenNull="true">
-					<reportElement x="184" y="76" width="125" height="10" uuid="9a15d6f7-4afc-4eb9-9292-5177051d6867">
+					<reportElement x="185" y="76" width="125" height="10" uuid="9a15d6f7-4afc-4eb9-9292-5177051d6867">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -904,7 +904,7 @@
 					<textFieldExpression><![CDATA[$F{dDesDepVen}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,###.###;(#,###.###-)" isBlankWhenNull="true">
-					<reportElement x="158" y="87" width="125" height="10" uuid="d5da89b0-e445-45dc-a278-2cfd830be07d">
+					<reportElement x="157" y="87" width="125" height="10" uuid="d5da89b0-e445-45dc-a278-2cfd830be07d">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -914,7 +914,7 @@
 					<textFieldExpression><![CDATA[$F{dDesDisVen}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,###.###;(#,###.###-)" isBlankWhenNull="true">
-					<reportElement x="459" y="11" width="81" height="10" uuid="db7cafae-6b6a-47ba-a753-7572fd6d484f">
+					<reportElement x="460" y="11" width="81" height="10" uuid="db7cafae-6b6a-47ba-a753-7572fd6d484f">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
