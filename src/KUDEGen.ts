@@ -1,6 +1,5 @@
 const { exec } = require("child_process");
 import fs from "fs";
-import findJavaHome from "find-java-home";
 
 class KUDEGen {
   /**
@@ -8,17 +7,17 @@ class KUDEGen {
    * @param xml
    * @returns
    */
-  generateKUDE(xml: string, urlLogo: string, ambiente: string) {
+  generateKUDE(java8Path: string, xml: string, urlLogo: string, ambiente: string) {
     return new Promise(async (resolve, reject) => {
       //console.log("A firmar", xml);
       //xml = await this.asignarFechaFirma(xml);
-      findJavaHome({ allowJre: true }, (err: any, java8Path: any) => {
+      /*findJavaHome({ allowJre: true }, (err: any, java8Path: any) => {
         if (err) return console.log(err);
         if (process.env.java8_home) {
           //java8Path = `"C:\\Program Files\\Java\\jdk1.8.0_221\\bin\\java"`;
           java8Path = process.env.java8_home;
         }
-
+*/
         const classPath = "" + __dirname + "/jasperLibs/";
         const jarFile = "" + __dirname + "/CreateKude.jar";
         const tmpXMLToSign = "" + __dirname + "/xml_sign_temp.xml";
@@ -54,7 +53,7 @@ class KUDEGen {
           }
         );
       });
-    });
+    //});
   }
 }
 

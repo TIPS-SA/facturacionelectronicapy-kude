@@ -713,8 +713,8 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
 					<font size="9" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$P{ambiente}.equals("0") ? ("Factura generada en Ambiente NO CONECTADO a la SET") :
-($P{ambiente}.equals("1") ? "Factura generada en Ambiente de PRUEBA de la SET":"  ")]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{ambiente}.equals("0") ? ("Documento generado en Ambiente NO CONECTADO a la SET") :
+($P{ambiente}.equals("1") ? "Documento generado en Ambiente de PRUEBA de la SET":"  ")]]></textFieldExpression>
 			</textField>
 		</band>
 	</title>

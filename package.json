@@ -37,9 +37,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "copyfiles": "^2.4.1",
-    "find-java-home": "^1.2.2",
-    "node-jasper-report": "^1.0.29"
+    "copyfiles": "^2.4.1"
   },
   "devDependencies": {
     "@types/node": "^16.11.7",
