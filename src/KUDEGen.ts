@@ -11,25 +11,17 @@ class KUDEGen {
     java8Path: string,
     xml: string,
     urlLogo: string,
-    ambiente: string
+    destFolder: string
   ) {
     return new Promise(async (resolve, reject) => {
-      //console.log("A firmar", xml);
-      //xml = await this.asignarFechaFirma(xml);
-      /*findJavaHome({ allowJre: true }, (err: any, java8Path: any) => {
-        if (err) return console.log(err);
-        if (process.env.java8_home) {
-          //java8Path = `"C:\\Program Files\\Java\\jdk1.8.0_221\\bin\\java"`;
-          java8Path = process.env.java8_home;
-        }
-*/
+   
       const classPath = "" + __dirname + "/jasperLibs/";
       const jarFile = "" + __dirname + "/CreateKude.jar";
       const tmpXMLToSign = "" + __dirname + "/xml_sign_temp.xml";
       const jasperPath = "" + __dirname + "/DE/";
 
       fs.writeFileSync(tmpXMLToSign, xml, { encoding: "utf8" });
-      const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${tmpXMLToSign}" "${urlLogo}" "${jasperPath}" "${ambiente}"`;
+      const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${tmpXMLToSign}" "${jasperPath}" "${destFolder}"`;
       console.log("fullCommand", fullCommand);
       exec(
         fullCommand,

@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Factura" pageWidth="226" pageHeight="502" whenNoDataType="BlankPage" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="9d35ef5c-5869-4d1d-b843-9880d8432e96">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src/DE/DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="471"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="515"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<parameter name="ambiente" class="java.lang.String">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="LOGO_URL" class="java.lang.String" isForPrompting="false" evaluationTime="Early"/>
+	<queryString language="xPath">
+		<![CDATA[/rDE/DE/gDtipDE/gCamItem]]>
+	</queryString>
+	<field name="dCodInt" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="dCodInt"/>
+		<fieldDescription><![CDATA[dCodInt]]></fieldDescription>
+	</field>
+	<field name="dDesProSer" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="dDesProSer"/>
+		<fieldDescription><![CDATA[dDesProSer]]></fieldDescription>
+	</field>
+	<field name="dDesUniMed" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="dDesUniMed"/>
+		<fieldDescription><![CDATA[dDesUniMed]]></fieldDescription>
+	</field>
+	<field name="cUniMed" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="cUniMed"/>
+		<fieldDescription><![CDATA[cUniMed]]></fieldDescription>
+	</field>
+	<field name="dCantProSer" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="dCantProSer"/>
+		<fieldDescription><![CDATA[dCantProSer]]></fieldDescription>
+	</field>
+	<field name="dInfItem" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="dInfItem"/>
+		<fieldDescription><![CDATA[dInfItem]]></fieldDescription>
+	</field>
+	<field name="dNumDoc" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTimb/dNumDoc"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTimb/dNumDoc]]></fieldDescription>
+	</field>
+	<field name="dNumTim" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTimb/dNumTim"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTimb/dNumTim]]></fieldDescription>
+	</field>
+	<field name="dDesTipEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gOpeDE/dDesTipEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gOpeDE/dDesTipEmi]]></fieldDescription>
+	</field>
+	<field name="dCodSeg" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gOpeDE/dCodSeg"/>
+		<fieldDescription><![CDATA[/rDE/DE/gOpeDE/dCodSeg]]></fieldDescription>
+	</field>
+	<field name="dInfoEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gOpeDE/dInfoEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gOpeDE/dInfoEmi]]></fieldDescription>
+	</field>
+	<field name="dInfoFisc" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gOpeDE/dInfoFisc"/>
+		<fieldDescription><![CDATA[/rDE/DE/gOpeDE/dInfoFisc]]></fieldDescription>
+	</field>
+	<field name="iTiDE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTimb/iTiDE"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTimb/iTiDE]]></fieldDescription>
+	</field>
+	<field name="dSubExe" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dSubExe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dSubExe]]></fieldDescription>
+	</field>
+	<field name="dSubExo" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dSubExo"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dSubExo]]></fieldDescription>
+	</field>
+	<field name="dSub5" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dSub5"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dSub5]]></fieldDescription>
+	</field>
+	<field name="dSub10" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dSub10"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dSub10]]></fieldDescription>
+	</field>
+	<field name="dTotOpe" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTotOpe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dTotOpe]]></fieldDescription>
+	</field>
+	<field name="dTotDesc" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTotDesc"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dTotDesc]]></fieldDescription>
+	</field>
+	<field name="dTotDescGlotem" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTotDescGlotem"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dTotDescGlotem]]></fieldDescription>
+	</field>
+	<field name="dTotAntItem" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTotAntItem"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dTotAntItem]]></fieldDescription>
+	</field>
+	<field name="dTotAnt" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTotAnt"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dTotAnt]]></fieldDescription>
+	</field>
+	<field name="dPorcDescTotal" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dPorcDescTotal"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dPorcDescTotal]]></fieldDescription>
+	</field>
+	<field name="dDescTotal" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dDescTotal"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dDescTotal]]></fieldDescription>
+	</field>
+	<field name="dAnticipo" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dAnticipo"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dAnticipo]]></fieldDescription>
+	</field>
+	<field name="dRedon" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dRedon"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dRedon]]></fieldDescription>
+	</field>
+	<field name="dTotGralOpe" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTotGralOpe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dTotGralOpe]]></fieldDescription>
+	</field>
+	<field name="dTotalGs" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTotalGs"/>
+		<fieldDescription><![CDATA[total en guaranies]]></fieldDescription>
+	</field>
+	<field name="dIVA5" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dIVA5"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dIVA5]]></fieldDescription>
+	</field>
+	<field name="dIVA10" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dIVA10"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dIVA10]]></fieldDescription>
+	</field>
+	<field name="dTotIVA" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTotIVA"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dTotIVA]]></fieldDescription>
+	</field>
+	<field name="dBaseGrav5" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dBaseGrav5"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dBaseGrav5]]></fieldDescription>
+	</field>
+	<field name="dBaseGrav10" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dBaseGrav10"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dBaseGrav10]]></fieldDescription>
+	</field>
+	<field name="dTBasGraIVA" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTotSub/dTBasGraIVA"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTotSub/dTBasGraIVA]]></fieldDescription>
+	</field>
+	<field name="dPUniProSer" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="gValorItem/dPUniProSer"/>
+		<fieldDescription><![CDATA[gValorItem/dPUniProSer]]></fieldDescription>
+	</field>
+	<field name="dTotBruOpeItem" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="gValorItem/dTotBruOpeItem"/>
+		<fieldDescription><![CDATA[gValorItem/dTotBruOpeItem]]></fieldDescription>
+	</field>
+	<field name="dDescItem" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="gValorItem/gValorRestaItem/dDescItem"/>
+		<fieldDescription><![CDATA[gValorItem/gValorRestaItem/dDescItem]]></fieldDescription>
+	</field>
+	<field name="dPorcDesIt" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="gValorItem/gValorRestaItem/dPorcDesIt"/>
+		<fieldDescription><![CDATA[gValorItem/gValorRestaItem/dPorcDesIt]]></fieldDescription>
+	</field>
+	<field name="dDescGloItem" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="gValorItem/gValorRestaItem/dDescGloItem"/>
+		<fieldDescription><![CDATA[gValorItem/gValorRestaItem/dDescGloItem]]></fieldDescription>
+	</field>
+	<field name="dTotOpeItem" class="java.lang.Double">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="gValorItem/gValorRestaItem/dTotOpeItem"/>
+		<fieldDescription><![CDATA[gValorItem/gValorRestaItem/dTotOpeItem]]></fieldDescription>
+	</field>
+	<field name="iTiOpe" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/iTiOpe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/iTiOpe]]></fieldDescription>
+	</field>
+	<field name="cPaisRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/cPaisRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/cPaisRec]]></fieldDescription>
+	</field>
+	<field name="dDesPaisRe" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dDesPaisRe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dDesPaisRe]]></fieldDescription>
+	</field>
+	<field name="iTiContRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/iTiContRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/iTiContRec]]></fieldDescription>
+	</field>
+	<field name="dRucRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dRucRec"/>
+		<fieldDescription><![CDATA[Ruc del Receptor]]></fieldDescription>
+	</field>
+	<field name="dDesActEco" class="java.lang.String">
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/gActEco/dDesActEco]]></fieldDescription>
+	</field>
+	<field name="dDVRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dDVRec"/>
+		<fieldDescription><![CDATA[DV del Receptor]]></fieldDescription>
+	</field>
+	<field name="dNumIDRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dNumIDRec"/>
+		<fieldDescription><![CDATA[Numero de documento]]></fieldDescription>
+	</field>
+	<field name="dNomRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dNomRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dNomRec]]></fieldDescription>
+	</field>
+	<field name="dDirRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dDirRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dDirRec]]></fieldDescription>
+	</field>
+	<field name="dNumCasRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dNumCasRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dNumCasRec]]></fieldDescription>
+	</field>
+	<field name="cDepRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/cDepRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/cDepRec]]></fieldDescription>
+	</field>
+	<field name="dDesDepRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dDesDepRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dDesDepRec]]></fieldDescription>
+	</field>
+	<field name="cDisRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/cDisRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/cDisRec]]></fieldDescription>
+	</field>
+	<field name="dDesDisRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dDesDisRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dDesDisRec]]></fieldDescription>
+	</field>
+	<field name="cCiuRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/cCiuRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/cCiuRec]]></fieldDescription>
+	</field>
+	<field name="dDesCiuRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dDesCiuRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dDesCiuRec]]></fieldDescription>
+	</field>
+	<field name="dTelRec" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dTelRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dTelRec]]></fieldDescription>
+	</field>
+	<field name="dCodCliente" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/dCodCliente"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/dCodCliente]]></fieldDescription>
+	</field>
+	<field name="dEmailE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dEmailE"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dEmailE]]></fieldDescription>
+	</field>
+	<field name="dRucEm" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dRucEm"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dRucEm]]></fieldDescription>
+	</field>
+	<field name="dDVEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dDVEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dDVEmi]]></fieldDescription>
+	</field>
+	<field name="iTipCont" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/iTipCont"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/iTipCont]]></fieldDescription>
+	</field>
+	<field name="cTipReg" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/cTipReg"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/cTipReg]]></fieldDescription>
+	</field>
+	<field name="dNomEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dNomEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dNomEmi]]></fieldDescription>
+	</field>
+	<field name="dDirEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dDirEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dDirEmi]]></fieldDescription>
+	</field>
+	<field name="dNumCas" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dNumCas"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dNumCas]]></fieldDescription>
+	</field>
+	<field name="cDepEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/cDepEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/cDepEmi]]></fieldDescription>
+	</field>
+	<field name="dDesDepEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dDesDepEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dDesDepEmi]]></fieldDescription>
+	</field>
+	<field name="cCiuEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/cCiuEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/cCiuEmi]]></fieldDescription>
+	</field>
+	<field name="dDesCiuEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dDesCiuEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dDesCiuEmi]]></fieldDescription>
+	</field>
+	<field name="dTelEmi" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/dTelEmi"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/dTelEmi]]></fieldDescription>
+	</field>
+	<field name="gActEco" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gEmis/gActEco"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gEmis/gActEco]]></fieldDescription>
+	</field>
+	<field name="dCarQR" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/gCamFuFD/dCarQR"/>
+		<fieldDescription><![CDATA[/rDE/gCamFuFD/dCarQR]]></fieldDescription>
+	</field>
+	<field name="dDesTiDE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTimb/dDesTiDE"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTimb/dDesTiDE]]></fieldDescription>
+	</field>
+	<field name="dFeIniT" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTimb/dFeIniT"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTimb/dFeIniT]]></fieldDescription>
+	</field>
+	<field name="dFeEmiDE" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/dFeEmiDE"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/dFeEmiDE]]></fieldDescription>
+	</field>
+	<field name="dDesTipTra" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gOpeCom/dDesTipTra"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gOpeCom/dDesTipTra]]></fieldDescription>
+	</field>
+	<field name="dDesMoneOpe" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gOpeCom/dDesMoneOpe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gOpeCom/dDesMoneOpe]]></fieldDescription>
+	</field>
+	<field name="dDCondOpe" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDtipDE/gCamCond/dDCondOpe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDtipDE/gCamCond/dDCondOpe]]></fieldDescription>
+	</field>
+	<field name="dTasaIVA" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="gCamIVA/dTasaIVA"/>
+		<fieldDescription><![CDATA[gCamIVA/dTasaIVA]]></fieldDescription>
+	</field>
+	<field name="Id" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ancestor::DE/@Id"/>
+		<fieldDescription><![CDATA[ancestor::DE/@Id]]></fieldDescription>
+	</field>
+	<field name="dDVId" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/dDVId"/>
+		<fieldDescription><![CDATA[/rDE/DE/dDVId]]></fieldDescription>
+	</field>
+	<field name="iNatRec" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gDatRec/iNatRec"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gDatRec/iNatRec]]></fieldDescription>
+	</field>
+	<field name="iCondOpe" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDtipDE/gCamCond/iCondOpe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDtipDE/gCamCond/iCondOpe]]></fieldDescription>
+	</field>
+	<field name="dDCondOpe_1" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDtipDE/gCamCond/dDCondOpe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDtipDE/gCamCond/dDCondOpe]]></fieldDescription>
+	</field>
+	<field name="iCondCred" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDtipDE/gCamCond/gPagCred/iCondCred"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDtipDE/gCamCond/gPagCred/iCondCred]]></fieldDescription>
+	</field>
+	<field name="dDCondCred" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDtipDE/gCamCond/gPagCred/dDCondCred"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDtipDE/gCamCond/gPagCred/dDCondCred]]></fieldDescription>
+	</field>
+	<field name="dPlazoCre" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDtipDE/gCamCond/gPagCred/dPlazoCre"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDtipDE/gCamCond/gPagCred/dPlazoCre]]></fieldDescription>
+	</field>
+	<field name="dCuotas" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDtipDE/gCamCond/gPagCred/dCuotas"/>
+		<fieldDescription><![CDATA[Cantidad de cuotas]]></fieldDescription>
+	</field>
+	<field name="cMoneOpe" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gOpeCom/cMoneOpe"/>
+		<fieldDescription><![CDATA[/rDE/DE/gDatGralOpe/gOpeCom/cMoneOpe]]></fieldDescription>
+	</field>
+	<field name="dCondTiCam" class="java.lang.Integer">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gOpeCom/dCondTiCam"/>
+		<fieldDescription><![CDATA[Condición del tipo de cambio]]></fieldDescription>
+	</field>
+	<field name="dTiCam" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gDatGralOpe/gOpeCom/dTiCam"/>
+	</field>
+	<field name="dPunExp" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTimb/dPunExp"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTimb/dPunExp]]></fieldDescription>
+	</field>
+	<field name="dEst" class="java.lang.String">
+		<property name="net.sf.jasperreports.xpath.field.expression" value="/rDE/DE/gTimb/dEst"/>
+		<fieldDescription><![CDATA[/rDE/DE/gTimb/dEst]]></fieldDescription>
+	</field>
+	<variable name="V_dFeEmiDE" class="java.util.Date">
+		<variableExpression><![CDATA[new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse($F{dFeEmiDE})]]></variableExpression>
+	</variable>
+	<variable name="V_dFeIniT" class="java.util.Date">
+		<variableExpression><![CDATA[new java.text.SimpleDateFormat("yyyy-MM-dd").parse($F{dFeIniT})]]></variableExpression>
+	</variable>
+	<group name="dCodInt">
+		<groupExpression><![CDATA[$F{dCodInt}]]></groupExpression>
+	</group>
+	<group name="dDesProSer">
+		<groupExpression><![CDATA[$F{dDesProSer}]]></groupExpression>
+	</group>
+	<group name="cUniMed">
+		<groupExpression><![CDATA[$F{cUniMed}]]></groupExpression>
+	</group>
+	<group name="dDesUniMed">
+		<groupExpression><![CDATA[$F{dDesUniMed}]]></groupExpression>
+	</group>
+	<group name="dCantProSer">
+		<groupExpression><![CDATA[$F{dCantProSer}]]></groupExpression>
+	</group>
+	<group name="dInfItem">
+		<groupExpression><![CDATA[$F{dInfItem}]]></groupExpression>
+	</group>
+	<title>
+		<band height="144" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image hAlign="Center" vAlign="Middle" onErrorType="Blank">
+				<reportElement x="0" y="0" width="186" height="40" uuid="2d0ffeb4-cc8c-4fc9-91c3-7ece1272032e">
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{LOGO_URL}]]></imageExpression>
+			</image>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="48" width="184" height="8" uuid="47cab32d-f60b-4b56-a5fa-29a28b8191fe">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font size="6" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dNomEmi}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="61" width="184" height="8" uuid="8c7889c2-9a05-443d-b3f0-01bcd52268e1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dDirEmi}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="77" width="184" height="8" uuid="71cf3269-8abd-4a14-aecc-45e149227715">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dTelEmi}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="69" width="184" height="8" uuid="9c7cd832-e5e4-4e22-83fd-42cff7cdaf5f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dDesCiuEmi}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="85" width="184" height="8" uuid="a8df43a8-0af6-4927-ba0c-396e23fc04ca">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dEmailE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="40" width="184" height="8" uuid="53357bb1-843b-445a-9630-768e736deb6c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dRucEm} + "-"+ $F{dDVEmi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="110" width="76" height="8" uuid="eb6dd6bb-f10f-42d6-9af6-984851dc4ad5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Timbrado Nº]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="110" width="99" height="8" uuid="90647131-bc54-4bc8-9a31-894f789ad037">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":" + $F{dNumTim}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="88" y="118" width="96" height="8" uuid="fba7bf8d-9904-4ada-abd8-5bb89229b2bc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{V_dFeIniT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="128" width="99" height="8" uuid="03b54dd1-fa8f-44df-ba17-9fa8b7e58c08">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[":" + $F{dEst}+ "-" +   $F{dPunExp} + "-" +$F{dNumDoc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="128" width="84" height="8" uuid="bcb73dcb-e3d9-40e9-9fdd-e52d4566846e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dDesTiDE}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="dd/MM/yyyy h:mm:ss" isBlankWhenNull="true">
+				<reportElement x="88" y="136" width="96" height="8" uuid="a6f5d2a0-f6b2-4ccb-add2-06f132a054cd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{V_dFeEmiDE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="136" width="85" height="8" forecolor="#000000" uuid="ee4c75f1-d3fa-474a-ad3e-380e5876e818">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Fecha y hora de emisión]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="93" width="184" height="7" uuid="a816ac89-03e9-4fbb-b556-61b580bd7465">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Actividad económica " + $F{dDesActEco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="85" y="118" width="3" height="8" uuid="06a4d724-a18b-481c-8050-b0d7de0e3fad">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="136" width="3" height="8" uuid="e28c1a6c-287d-4f40-9d1c-a1fd69877464">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="118" width="76" height="8" uuid="2d5a0dd9-294e-45a1-ac4d-94e9c3a435e5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Fecha de Vigencia]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="9" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<line>
+				<reportElement x="1" y="0" width="184" height="1" printWhenGroupChanges="dCodInt" uuid="c63522cd-0b2f-49e3-a586-1f8df076277a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="18" height="7" uuid="9cb9122f-bb42-48fe-8973-3e3363f7d808">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cod.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="1" width="98" height="7" uuid="d7c63711-9df1-4c08-86aa-b1f0931cc2eb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="1" width="33" height="7" uuid="703500cb-505f-4006-abe7-14cc0196e6fd">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1392975-1ed6-4fdf-83a0-7976d4384b71"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="1" width="34" height="7" uuid="38df142d-0185-4bb9-a5b6-c6b06b4f22ef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="23e8b3aa-5c0d-40ee-82e9-68329dac4465"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="8" width="184" height="1" printWhenGroupChanges="dCodInt" uuid="2a3029ea-c6be-4d5b-a8e7-76abbd769f61"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="8" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="19" y="0" width="99" height="7" isPrintWhenDetailOverflows="true" uuid="3ab31cde-ac02-419d-b69a-5fbe692f0484">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dDesProSer}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="29" height="7" uuid="fceb24b8-5dba-4a68-a140-196d91a6d527">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1392975-1ed6-4fdf-83a0-7976d4384b71"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dCantProSer}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;(#,###.###-)">
+				<reportElement x="148" y="0" width="37" height="7" uuid="1d135cd2-685c-45ae-87e0-96863440a66c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46b75097-662e-4590-80c2-6367c1fc5b80"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dTotOpeItem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="18" height="7" uuid="cc64cd71-01a7-448b-b848-9915dc9d0557">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e983057f-222d-422b-bd60-858cc93e6cf1"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dCodInt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="197" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement stretchType="ElementGroupHeight" x="1" y="146" width="185" height="15" uuid="c97578dd-cfe8-4242-995f-e93b268251f2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Consulte la validez de esta Factura Electrónica con el número de CDC impreso abajo en:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="161" width="185" height="7" uuid="91510ea7-5f1c-4e49-b67d-6585a329e8e9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[https://ekuatia.set.gov.py/consultas]]></text>
+			</staticText>
+			<textField evaluationTime="Report" pattern="#,##0.###;(#,##0.###-)">
+				<reportElement x="130" y="49" width="55" height="7" uuid="db2d8853-1da9-4277-a45c-bc86accbd7d8">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dIVA5} == null? 0:$F{dIVA5}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="17" width="106" height="7" uuid="f4fac15b-5ea3-43b1-a76a-24c2ecdf566f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Total Pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="3" width="106" height="7" uuid="526605a2-5140-40fe-af56-43c48bfc8765">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<textField pattern="#,###.###;(#,###.###-)">
+				<reportElement x="130" y="3" width="55" height="7" uuid="548c4ceb-42ed-4d86-b55f-96ac4ce844a7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{dSub10} == null ? 0 : $F{dSub10}) +($F{dSub5} == null ? 0 : $F{dSub5}) + ($F{dSubExe} == null ? 0: $F{dSubExe})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="106" height="7" uuid="574c174d-b99d-47ac-a899-116a15da3dd7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Guaranies]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="1" width="184" height="1" uuid="96b45279-c6e3-4098-a323-07c84b4d3793"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="26" width="120" height="7" uuid="200add39-b280-43ba-b7ab-ac06af625eb4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Detalle Totales(Base Imponibles)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="33" width="106" height="7" uuid="161ac92c-5460-41ce-81c2-89ec975ce299">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Gravada 10%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="42" width="106" height="7" uuid="83ff8b8b-d8f7-4168-95da-30510b23157f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Detalle del Impuesto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="49" width="106" height="7" uuid="d964769e-3782-403c-9aaa-ff798b61fce7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[IVA 5%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="56" width="106" height="7" uuid="230280e7-89dd-4c9e-ac6d-5cdf731c02e0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[IVA 10%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="63" width="106" height="7" uuid="b10f8209-2df6-48d7-9981-ff3d97c80af9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Liquidacion Total del IVA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="71" width="184" height="1" uuid="70ecf543-fea3-4005-b2c2-273c35ff0951"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="53" y="73" width="132" height="7" uuid="593d1cde-0388-4cff-acf4-62dbc6dd98d1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dNomRec}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="73" width="53" height="7" uuid="a678f6ab-dd15-4f36-811c-1cd87d1123f9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{iNatRec} == 1?  "Razón Social:" : "Nombre:")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="80" width="185" height="7" uuid="1a708ac9-3c80-4dba-b683-bd8bacab701f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{iNatRec} == 1?  "RUC: " +  $F{dRucRec}+ "-" + $F{dDVRec}  : "Documento de identidad:  "+ $F{dNumIDRec})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="87" width="64" height="7" forecolor="#000000" uuid="327644dd-cf6e-430a-8056-2699766d9a46">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Condición Venta:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="64" y="87" width="121" height="7" uuid="26710a20-ea91-4ae9-a6cd-43dcd90fc75e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dDCondOpe}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="95" width="184" height="1" uuid="b2989fc2-8697-478d-a625-c1a910c61836"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField evaluationTime="Group" evaluationGroup="dCodInt" pattern="#### #### #### #### #### #### #### #### #### ####">
+				<reportElement x="1" y="168" width="185" height="8" uuid="364e5fb7-db8a-4473-a9e5-f1d145e10453">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Id} .replaceAll("(?s).{4}(?!$)", "$0 ");]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="190" width="185" height="7" uuid="ce7aa940-904f-4b98-9672-77fc34615bab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="29f58474-1738-49aa-a73d-37a6cbf3d577"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Informacion de Interes del Facturador electronico Emisor.]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle" isLazy="true" onErrorType="Blank" evaluationTime="Group" evaluationGroup="dDesProSer">
+				<reportElement x="0" y="97" width="186" height="49" uuid="4cebc4fc-9070-493e-86ab-7e5cee408c10">
+					<property name="com.jaspersoft.studio.unit.width" value="mm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="mm"/>
+				</reportElement>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+    new com.google.zxing.qrcode.QRCodeWriter().encode(
+        $F{dCarQR},
+        com.google.zxing.BarcodeFormat.QR_CODE, 300, 300
+    )
+)]]></imageExpression>
+			</image>
+			<textField textAdjust="StretchHeight">
+				<reportElement stretchType="ContainerBottom" x="1" y="176" width="185" height="14" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="daaf26f1-465b-4327-95cb-b003fcf1af1b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ESTE DOCUMENTO ES UNA REPRESENTACIÓN GRÁFICA DE UN DOCUMENTO ELECTRÓNICO (XML)"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="#,##0.###;(#,##0.###-)">
+				<reportElement x="130" y="56" width="55" height="7" uuid="155a369e-f6df-4117-afac-0232bddbc15b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dIVA10} == null? 0:$F{dIVA10}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)">
+				<reportElement x="130" y="63" width="55" height="7" uuid="c6f8595e-4c1f-4ffe-9330-0cd18cef4c3a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{dIVA10}!=null?$F{dIVA10}:0) +($F{dIVA5}!=null?$F{dIVA5}:0)]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;(#,###.###-)">
+				<reportElement x="130" y="17" width="55" height="7" uuid="ec5b37c3-a663-4587-ac72-9e5dbceb08ef">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dTotGralOpe}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;(#,###.###-)">
+				<reportElement x="130" y="10" width="55" height="7" uuid="bc679354-d1f7-4f2a-a615-bb8b822c0274">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cMoneOpe} .equals( "PYG" )? "":$F{dTotalGs}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,###.###;(#,###.###-)">
+				<reportElement x="130" y="33" width="55" height="7" uuid="f2f362e9-6159-4888-961d-a2eab083e1aa">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{dSub10} == null ? 0 : $F{dSub10})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+</jasperReport>
