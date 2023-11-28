@@ -28,7 +28,9 @@ class KUDEGen {
       }
 
       if (destFolder.indexOf(" ") > -1) {
-        reject(new Error("El parámetro 'destFolder' no debe contener espacios"));
+        reject(
+          new Error("El parámetro 'destFolder' no debe contener espacios")
+        );
       }
 
       //fs.writeFileSync(tmpXMLToSign, xml, { encoding: "utf8" });
