@@ -9,17 +9,16 @@ class KUDEGen {
    */
   generateKUDE(
     java8Path: string,
-    xml: string,  //XML Content or XML Path
+    xml: string, //XML Content or XML Path
     srcJasper: string, //Path de los archivos .jasper
     destFolder: string, //Path destino del Archivo PDF
     jsonParam?: any //Parámetros a enviar al reporte en formato JSON
   ) {
     return new Promise(async (resolve, reject) => {
-   
       const classPath = "" + __dirname + "/jasperLibs/";
       const jarFile = "" + __dirname + "/CreateKude.jar";
       const tmpXMLToSign = "" + __dirname + "/xml_sign_temp.xml";
-      
+
       fs.writeFileSync(tmpXMLToSign, xml, { encoding: "utf8" });
       const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${tmpXMLToSign}" "${srcJasper}" "${destFolder}" "${jsonParam}"`;
       console.log("fullCommand", fullCommand);
