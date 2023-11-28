@@ -20,7 +20,7 @@ class KUDEGen {
       const tmpXMLToSign = "" + __dirname + "/xml_sign_temp.xml";
 
       fs.writeFileSync(tmpXMLToSign, xml, { encoding: "utf8" });
-      const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${tmpXMLToSign}" "${srcJasper}" "${destFolder}" "${jsonParam}"`;
+      const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${xml}" "${srcJasper}" "${destFolder}" "${jsonParam}"`;
       console.log("fullCommand", fullCommand);
       exec(
         fullCommand,
