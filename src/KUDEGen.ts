@@ -19,8 +19,20 @@ class KUDEGen {
       const jarFile = "" + __dirname + "/CreateKude.jar";
       const tmpXMLToSign = "" + __dirname + "/xml_sign_temp.xml";
 
-      fs.writeFileSync(tmpXMLToSign, xml, { encoding: "utf8" });
-      const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" "${xml}" "${srcJasper}" "${destFolder}" "${jsonParam}"`;
+      if (xml.indexOf(" ") > -1) {
+        reject(new Error("El parámetro 'xml' no debe contener espacios"));
+      }
+
+      if (srcJasper.indexOf(" ") > -1) {
+        reject(new Error("El parámetro 'srcJasper' no debe contener espacios"));
+      }
+
+      if (destFolder.indexOf(" ") > -1) {
+        reject(new Error("El parámetro 'destFolder' no debe contener espacios"));
+      }
+
+      //fs.writeFileSync(tmpXMLToSign, xml, { encoding: "utf8" });
+      const fullCommand = `"${java8Path}" -Dfile.encoding=IBM850 -classpath "${classPath}" -jar "${jarFile}" ${xml} ${srcJasper} ${destFolder} "${jsonParam}"`;
       console.log("fullCommand", fullCommand);
       exec(
         fullCommand,
@@ -35,7 +47,7 @@ class KUDEGen {
 
           try {
             //file removed
-            fs.unlinkSync(tmpXMLToSign);
+            //fs.unlinkSync(tmpXMLToSign);
           } catch (err) {
             console.error(err);
           }
